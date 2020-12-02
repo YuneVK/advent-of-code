@@ -1,60 +1,48 @@
-const input = require('./input')
-const EXPECTED_SUM = 2020
+// const getInput = require('../utils/getInput')
 
-const getTwoEntries = (input, expectedSum) => {
-  let found = false
-  let currentIndex = 0
-  let result
+// const EXPECTED_SUM = 2020
+// const input = getInput('01').map(number => +number)
 
-  while (found === false) {
-    if (currentIndex === input.length - 1) {
-      found = true
-    }
+const getTwoEntries = (numbers, expectedSum) => {
+  let found = 0
 
-    const currentNum = input[currentIndex]
-    const remainingNumbers = input.slice(currentIndex)
-
-    remainingNumbers.forEach(nextNum => {
-      if (currentNum + nextNum === expectedSum) {
-        found = true
-        result = currentNum * nextNum
+  numbers.forEach((number1, index) => {
+    numbers.slice(index).forEach(number2 => {
+      if (number1 + number2 === expectedSum) {
+        found = number1 * number2
       }
     })
-
-    currentIndex++
-  }
-  
-  return result
+  })  
+  return found
 }
 
-const getThreeEntries = (input, expectedSum) => {
-  let found = false
-  let currentIndex = 0
-  let result
+const getThreeEntries = (numbers, expectedSum) => {
+  let found = 0
+  let i = 0
 
-  while (found === false) {
-    if (currentIndex === input.length - 1) {
-      found = true
-    }
-
-    const currentNum = input[currentIndex]
-    const remainingNumbers = input.slice(currentIndex)
-
-    remainingNumbers.forEach((nextNum, index) => {
-      const remainingNumbers2 = remainingNumbers.slice(index)
-      remainingNumbers2.forEach(nextNum2 => {
-        if (currentNum + nextNum + nextNum2 === expectedSum) {
-          found = true
-          result = currentNum * nextNum * nextNum2
+  while (!found && i < numbers.length) {
+    let j = i
+    while (!found && j < numbers.length) {
+      let k = j
+      while (!found && k < numbers.length) {
+        if (numbers[i] + numbers[j] + numbers[k] === expectedSum) {
+          found = numbers[i] * numbers[j] * numbers[k]
         }
-      })
-    })
-
-    currentIndex++
+        k++
+      }
+      j++
+    }
+    i++
   }
-  
-  return result
+  return found
 }
 
-console.log(getTwoEntries(input, EXPECTED_SUM))
-console.log(getThreeEntries(input, EXPECTED_SUM))
+module.exports = { getTwoEntries, getThreeEntries }
+
+// console.time('1')
+// console.log(getTwoEntries(input, EXPECTED_SUM))
+// console.timeEnd('1')
+
+// console.time('2')
+// console.log(getThreeEntries(input, EXPECTED_SUM))
+// console.timeEnd('2')
