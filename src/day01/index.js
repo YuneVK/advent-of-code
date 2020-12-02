@@ -39,10 +39,10 @@ const getThreeEntries = (numbers, expectedSum) => {
 
 module.exports = { getTwoEntries, getThreeEntries }
 
-// console.time('1')
+// console.time('Part 1')
 // console.log(getTwoEntries(input, EXPECTED_SUM))
-// console.timeEnd('1')
+// console.timeEnd('Part 1')
 
-// console.time('2')
+// console.time('Part 2')
 // console.log(getThreeEntries(input, EXPECTED_SUM))
-// console.timeEnd('2')
+// console.timeEnd('Part 2')
