@@ -1,9 +1,9 @@
-const getInput = require('../utils/getInput')
-const input = getInput('03')
+// const getInput = require('../utils/getInput')
+// const input = getInput('03')
 
-const STEP = [1, 3]
+// const STEPS = [[1, 1], [1, 3], [1, 5], [1, 7], [2, 1]]
 
-const getTreesFound = (map, step = STEP) => {
+const getTreesFound = (map, step) => {
   let position = step
   const points = []
   const mapWidth = map[0].length
@@ -21,20 +21,17 @@ const getTreesFound = (map, step = STEP) => {
   return points.filter(point => point === "#").length
 }
 
-const exampleData = `..##.......
-#...#...#..
-.#....#..#.
-..#.#...#.#
-.#...##..#.
-..#.##.....
-.#.#.#....#
-.#........#
-#.##...#...
-#...##....#
-.#..#...#.#`.split('\n')
+const getProductOfAllTreesFounded = (map, steps) => {
+  return steps
+    .map(step => getTreesFound(map, step))
+    .reduce((prev, acc) => acc * prev, 1)
+}
 
-console.time('Part 1')
-console.log(getTreesFound(input, STEP))
-console.timeEnd('Part 1')
+// console.time('Part 1')
+// console.log(getTreesFound(input, STEPS[1]))
+// console.timeEnd('Part 1')
+// console.time('Part 2')
+// console.log(getProductOfAllTreesFounded(input, STEPS))
+// console.timeEnd('Part 2')
 
-module.exports = { getTreesFound }
+module.exports = { getTreesFound, getProductOfAllTreesFounded }
