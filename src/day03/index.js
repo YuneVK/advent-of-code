@@ -1,8 +1,3 @@
-// const getInput = require('../utils/getInput')
-// const input = getInput('03')
-
-// const STEPS = [[1, 1], [1, 3], [1, 5], [1, 7], [2, 1]]
-
 const getTreesFound = (map, step) => {
   let position = step
   const points = []
@@ -26,12 +21,5 @@ const getProductOfAllTreesFounded = (map, steps) => {
     .map(step => getTreesFound(map, step))
     .reduce((prev, acc) => acc * prev, 1)
 }
-
-// console.time('Part 1')
-// console.log(getTreesFound(input, STEPS[1]))
-// console.timeEnd('Part 1')
-// console.time('Part 2')
-// console.log(getProductOfAllTreesFounded(input, STEPS))
-// console.timeEnd('Part 2')
 
 module.exports = { getTreesFound, getProductOfAllTreesFounded }

@@ -1,8 +1,3 @@
-// const getInput = require('../utils/getInput')
-
-// const EXPECTED_SUM = 2020
-// const input = getInput('01').map(number => +number)
-
 const getTwoEntries = (numbers, expectedSum) => {
   let found = 0
 
@@ -38,11 +33,3 @@ const getThreeEntries = (numbers, expectedSum) => {
 }
 
 module.exports = { getTwoEntries, getThreeEntries }
-
-// console.time('Part 1')
-// console.log(getTwoEntries(input, EXPECTED_SUM))
-// console.timeEnd('Part 1')
-
-// console.time('Part 2')
-// console.log(getThreeEntries(input, EXPECTED_SUM))
-// console.timeEnd('Part 2')
