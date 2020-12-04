@@ -1,5 +1,6 @@
 const { 
   getValidationPart1,
+  getValidationPart2,
   checkBirthYear,
   checkIssueYear,
   checkEspirationYear,
@@ -62,6 +63,16 @@ describe('Day 4: Passport Processing', () => {
 
     test('should work with input', () => {
       expect(getValidationPart1(input)).toBe(182)
+    })
+  })
+
+  describe('Part 2', () => {
+    test('should work with an example', () => {
+      expect(getValidationPart2(exampleDataPart2)).toBe(4)
+    })
+
+    test('should work with input', () => {
+      expect(getValidationPart2(input)).toBe(109)
     })
   })
 
@@ -138,14 +149,4 @@ describe('Day 4: Passport Processing', () => {
       })
     })
   })
-
-  // describe('Part 2', () => {
-  //   test('should work with an example', () => {
-  //     expect(getProductOfAllTreesFounded(exampleData)).toBe(336)
-  //   })
-
-  //   test('should work with input', () => {
-  //     expect(getProductOfAllTreesFounded(input)).toBe(2983070376)
-  //   })
-  // })
 })
