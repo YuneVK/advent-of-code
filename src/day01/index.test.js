@@ -2,7 +2,7 @@ const { getTwoEntries, getThreeEntries } = require('./index')
 const getInput = require('../utils/getInput')
 
 const EXPECTED_SUM = 2020
-const input = getInput('01').map(number => +number)
+const input = getInput('01').split('\n').map(number => +number)
 
 describe('Day 1: Report Repair - Part 1', () => {
   describe('Part 1', () => {

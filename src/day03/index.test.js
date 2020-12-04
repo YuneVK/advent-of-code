@@ -1,7 +1,7 @@
 const { getTreesFound, getProductOfAllTreesFounded } = require('./index')
 const getInput = require('../utils/getInput')
 
-const input = getInput('03')
+const input = getInput('03').split('\n')
 
 const exampleData = `..##.......
 #...#...#..

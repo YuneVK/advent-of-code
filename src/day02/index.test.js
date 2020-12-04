@@ -1,7 +1,7 @@
 const { getTotalValidPasswordsPart1, getTotalValidPasswordsPart2 } = require('./index')
 const getInput = require('../utils/getInput')
 
-const input = getInput('02')
+const input = getInput('02').split('\n')
 
 const exampleData = [
   '1-3 a: abcde',
