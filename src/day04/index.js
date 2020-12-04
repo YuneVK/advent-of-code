@@ -30,13 +30,20 @@ const VALID_FIELDS = [
   'pid'
 ]
 
-const getValidPassports = (input, validFields = VALID_FIELDS) => {
-  const passports = input.split('\n\n')
+const normalizePassport = passport => passport.replace(/\n/g, ' ').split(' ').sort().join('')
+
+const getBasicValidPassports = (passports, validFields) => {
   const regex = new RegExp(`${validFields.sort().join(':.+')}:.+`)
 
-  return passports.map(passport => {
-    return regex.test(passport.replace(/\n/g, ' ').split(' ').sort().join(''))
-  }).filter(isValid => isValid).length
+  return passports
+    .map(passport => regex.test(passport))
+    .filter(isValid => isValid).length
+}
+
+const getValidationPart1 = (input, validFields = VALID_FIELDS) => {
+  const passports = input.split('\n\n').map(normalizePassport)
+
+  return getBasicValidPassports(passports, validFields)
 }
 
 const exampleData = `eyr:1972 cid:100
@@ -68,10 +75,10 @@ iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719`
 
 // 4 valid
 
-console.log(getValidPassports(input))
+console.log(getValidationPart1(input))
 
 module.exports = { 
-  getValidPassports,
+  getValidationPart1,
   checkBirthYear,
   checkIssueYear,
   checkEspirationYear,

@@ -1,5 +1,5 @@
 const { 
-  getValidPassports,
+  getValidationPart1,
   checkBirthYear,
   checkIssueYear,
   checkEspirationYear,
@@ -57,11 +57,11 @@ iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719`
 describe('Day 4: Passport Processing', () => {
   describe('Part 1', () => {
     test('should work with an example', () => {
-      expect(getValidPassports(exampleDataPart1)).toBe(2)
+      expect(getValidationPart1(exampleDataPart1)).toBe(2)
     })
 
     test('should work with input', () => {
-      expect(getValidPassports(input)).toBe(182)
+      expect(getValidationPart1(input)).toBe(182)
     })
   })
 
