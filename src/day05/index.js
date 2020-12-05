@@ -56,19 +56,25 @@ const getSeatID = (pass, plane = PLANE) => {
 const getSeatIDList = (passes, plane = PLANE) => {
   return passes
     .map(pass => getSeatID(pass, plane))
-    .sort((a, b) => b - a)
+    .sort((a, b) => a - b)
 }
 
 const getHighestSeatID = (passes, plane = PLANE) => {
-  return getSeatIDList(passes, plane)[0]
+  return getSeatIDList(passes, plane).slice(-1)[0]
 }
 
-const pass = 'FBFBBFFRLR'
+const getMissingSeat = (passes, plane = PLANE) => {
+  const idList = getSeatIDList(passes, plane)
+  let id
+  let index = 1
 
-const passes = `BFFFBBFRRR
-FFFBBBFRRR
-BBFFBBFRLL`.split('\n')
+  while (!id && index < idList.length) {
+    if (idList[index] !== idList[index - 1] + 1) {
+      id = idList[index] - 1
+    }
+    index++
+  }
+  return id
+}
 
-console.log(getHighestSeatID(passes))
-
-module.exports = { decodeBoardingPass, getSeatID, getHighestSeatID }
+module.exports = { decodeBoardingPass, getSeatID, getHighestSeatID, getMissingSeat }

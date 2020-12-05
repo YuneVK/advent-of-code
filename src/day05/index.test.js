@@ -1,4 +1,4 @@
-const { decodeBoardingPass, getSeatID, getHighestSeatID } = require('./index')
+const { decodeBoardingPass, getSeatID, getHighestSeatID, getMissingSeat } = require('./index')
 const getInput = require('../utils/getInput')
 
 const input = getInput('05').split('\n')
@@ -32,13 +32,9 @@ describe('Day 5: Binary Boarding', () => {
     })
   })
 
-  // describe('Part 2', () => {
-  //   test('should work with an example', () => {
-  //     expect(getTotalValidPasswordsPart1(exampleData)).toBe(2)
-  //   })
-
-  //   test('should work with input', () => {
-  //     expect(getThreeEntries(input, EXPECTED_SUM)).toBe(13891280)
-  //   })
-  // })
+  describe('Part 2', () => {
+    test('should work with input', () => {
+      expect(getMissingSeat(input)).toBe(653)
+    })
+  })
 })
