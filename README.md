@@ -25,8 +25,8 @@ npm test
 | 1 - Report Repair       | ⭐️      | ⭐️     |
 | 2 - Password Philosophy | ⭐️      | ⭐️     |
 | 3 - Toboggan Trajectory | ⭐️      | ⭐️     |
-| 4 - TBA                 |        |        |
-| 5 - TBA                 |        |        |
+| 4 - Passport Processing | ⭐️      | ⭐️     |
+| 5 - Binary Boarding     | ⭐️      | ⭐️     |
 | 6 - TBA                 |        |        |
 | 7 - TBA                 |        |        |
 | 8 - TBA                 |        |        |
