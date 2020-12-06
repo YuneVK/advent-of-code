@@ -27,7 +27,7 @@ npm test
 | 3 - Toboggan Trajectory | ⭐️      | ⭐️     |
 | 4 - Passport Processing | ⭐️      | ⭐️     |
 | 5 - Binary Boarding     | ⭐️      | ⭐️     |
-| 6 - TBA                 |        |        |
+| 6 - Custom Customs      | ⭐️      | ⭐️     |
 | 7 - TBA                 |        |        |
 | 8 - TBA                 |        |        |
 | 9 - TBA                 |        |        |
