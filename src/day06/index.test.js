@@ -1,4 +1,4 @@
-const { getAnsweredYesQuestionsTotalCount } = require('./index')
+const { getAnsweredYesQuestionsByAnyone, getAnsweredYesQuestionsByEveryone } = require('./index')
 const getInput = require('../utils/getInput')
 
 const input = getInput('06')
@@ -22,21 +22,21 @@ b`
 describe('Day 6: Custom Customs', () => {
   describe('Part 1', () => {
     test('should work with an example', () => {
-      expect(getAnsweredYesQuestionsTotalCount(exampleData)).toBe(11)
+      expect(getAnsweredYesQuestionsByAnyone(exampleData)).toBe(11)
     })
 
     test('should work with input', () => {
-      expect(getAnsweredYesQuestionsTotalCount(input)).toBe(951)
+      expect(getAnsweredYesQuestionsByAnyone(input)).toBe(6259)
     })
   })
 
-  // describe('Part 2', () => {
-  //   test('should work with an example', () => {
-  //     expect(getHighestSeatID(examplePasses)).toBe(820)
-  //   })
+  describe('Part 2', () => {
+    test('should work with an example', () => {
+      expect(getAnsweredYesQuestionsByEveryone(exampleData)).toBe(6)
+    })
 
-  //   test('should work with input', () => {
-  //     expect(getMissingSeat(input)).toBe(653)
-  //   })
-  // })
+    test('should work with input', () => {
+      expect(getAnsweredYesQuestionsByEveryone(input)).toBe(3178)
+    })
+  })
 })

@@ -3,35 +3,37 @@ const getAnsweredYesQuestions = group => {
   const questions = {}
 
   answers.split('').forEach(answer => {
-    if (!questions[answer]) {
-      questions[answer] = true
+    if (!questions.hasOwnProperty(answer)) {
+      questions[answer] = 1
+    } else {
+      questions[answer]++
     }
   })
 
-  return Object.keys(questions).length
+  return questions
 }
 
-const getAnsweredYesQuestionsTotalCount = data => {
-  const questionsCount = data.split('\n\n').map(getAnsweredYesQuestions)
+const getAnsweredYesQuestionsByAnyone = data => {
+  const questionsCount = data
+    .split('\n\n')
+    .map(group => {
+      const answeredQuestions = getAnsweredYesQuestions(group)
+      return Object.keys(answeredQuestions).length
+    })
   return questionsCount.reduce((prev, curr) => curr + prev)
 }
 
-const exampleData = `abc
+const getAnsweredYesQuestionsByEveryone = data => {
+  const questionsCount = data
+    .split('\n\n')
+    .map(group => {
+      const answeredQuestions = getAnsweredYesQuestions(group)
+      const countQuestions = Object.values(answeredQuestions)
+      const peopleInGroup = group.split('\n').length
 
-a
-b
-c
+      return countQuestions.filter(answered => answered === peopleInGroup).length
+    })
+  return questionsCount.reduce((prev, curr) => curr + prev)
+}
 
-ab
-ac
-
-a
-a
-a
-a
-
-b`
-
-getAnsweredYesQuestionsTotalCount(exampleData)
-
-module.exports = { getAnsweredYesQuestionsTotalCount }
+module.exports = { getAnsweredYesQuestionsByAnyone, getAnsweredYesQuestionsByEveryone }
