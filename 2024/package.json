@@ -10,7 +10,6 @@
   "homepage": "https://github.com/YuneVK/advent-of-code#readme",
   "keywords": [],
   "license": "ISC",
-  "main": "index.js",
   "name": "advent-of-code-2024",
   "repository": {
     "type": "git",
@@ -18,7 +17,7 @@
   },
   "scripts": {
     "dev": "jest --watch --testPathPattern=./src/day$npm_config_day",
-    "start": "npx nodemon src/day$npm_config_day/index.js",
+    "start": "npx nodemon --verbose src/day$npm_config_day/index.js",
     "test": "jest"
   },
   "version": "1.0.0"
