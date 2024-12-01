@@ -4,9 +4,7 @@
     "url": "https://github.com/YuneVK/advent-of-code/issues"
   },
   "description": "https://adventofcode.com/2024",
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
+  "devDependencies": {},
   "homepage": "https://github.com/YuneVK/advent-of-code#readme",
   "keywords": [],
   "license": "ISC",
@@ -15,10 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/YuneVK/advent-of-code.git"
   },
-  "scripts": {
-    "dev": "jest --watch --testPathPattern=./src/day$npm_config_day",
-    "start": "npx nodemon --verbose src/day$npm_config_day/index.js",
-    "test": "jest"
-  },
+  "scripts": {},
   "version": "1.0.0"
 }
