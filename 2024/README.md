@@ -13,7 +13,7 @@ npx nodemon --verbose src/day{day}/index.js
 | Kata                   | Part 1 | Part 2 |
 | ---------------------- | ------ | ------ |
 | 1 - Historian Hysteria | ⭐     | ⭐     |
-| 2 - TBA                |        |        |
+| 2 - Red-Nosed Reports  | ⭐     | ⭐     |
 | 3 - TBA                |        |        |
 | 4 - TBA                |        |        |
 | 5 - TBA                |        |        |
